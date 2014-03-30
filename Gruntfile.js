@@ -30,6 +30,10 @@ module.exports = function (grunt) {
       dev: {
         src: ['assets/styles/scss/main.scss'],
         dest: 'assets/styles/css/main.css',
+        options: {
+          sourcemap: true,
+          lineNumbers: true,
+        }
       },
     },
     watch: {
