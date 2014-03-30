@@ -1,0 +1,59 @@
+///////////////////////
+//
+// Controls the common layout grid for small, medium, and large screens
+//
+// Requires:
+///////////////////////
+
+
+$min-container-width: 320px;
+$max-container-width: 1200px;
+
+// $phone-total-columns: 4;
+// $phone-column-width: 64px;
+// $phone-breakpoint-max: 767px;
+
+
+// $tablet-breakpoint-min: 768px;
+// $tablet-breakpoint-max: 1099px;
+// $tablet-total-columns: 6;
+
+
+// $desktop-breakpoint-min: 1100px;
+// $desktop-total-columns: 12;
+
+$mobile: new-breakpoint(max-width 767px 4);
+$tablet: new-breakpoint(min-width 768px max-width 1099px 6);
+
+$desktop: new-breakpoint(min-width 1100px 12);
+
+//---------- STYLES ---------
+
+
+
+body {
+  @include outer-container;
+}
+
+.grid {
+
+  // set to phone settings
+  min-width: $min-container-width;
+  max-width: $max-container-width;
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include omega;
+  }
+
+  @include media($tablet) {
+    @include span-columns(6);
+    @include omega;
+  }
+
+  @include media($desktop) {
+    @include span-columns(12);
+    @include omega;
+  }
+
+}
