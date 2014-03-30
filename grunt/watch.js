@@ -6,7 +6,12 @@ module.exports = {
       port: 35729,
     }
   },
-
+  sass: {
+    dev: {
+      src: ['assets/styles/scss/main.sass'],
+      dest: 'assets/styles/css/main.css',
+    },
+  },
   css: {
     files: ['<%= vars.stylesPath %>'],
     tasks: ['styles', 'clean:after'],

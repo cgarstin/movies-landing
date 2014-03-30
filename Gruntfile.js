@@ -6,42 +6,56 @@ module.exports = function (grunt) {
 
     // configurable paths
     vars: {
-      apiPath: ['api/*.js', 'api/**/*.js', 'api/**/**/*.js'],
+      //apiPath: ['api/*.js', 'api/**/*.js', 'api/**/**/*.js'],
       configPath: ['Gruntfile.js', 'grunt/**/*.js', 'config/*.js'],
-      stylesPath: ['assets/styles/utilities/*.styl', 'assets/styles/micro/*.styl', 'assets/styles/macro/*.styl', 'assets/styles/*.styl'],
+      //stylesPath: ['assets/styles/utilities/*.styl', 'assets/styles/micro/*.styl', 'assets/styles/macro/*.styl', 'assets/styles/*.styl'],
       jsAssetsPath: ['assets/js/*.js', 'assets/js/**/*.js', 'assets/js/**/**/*.js'],
-      jsBowerPath: ['assets/vendor/**/*min.js', '!assets/vendor/**/angular.min.js'],
-      jsonPath: ['./*.json', '.jshintrc', '.jsbeautifyrc', 'tests/**/*.json'],
-      testsPath: ['tests/*.js', 'tests/**/*.js', 'tests/**/**/*.js'],
-      viewsPath: ['assets/views/*.jade', 'assets/views/**/*.jade', 'assets/views/**/**/*.jade'],
+      //jsBowerPath: ['assets/vendor/**/*min.js', '!assets/vendor/**/angular.min.js'],
+      //jsonPath: ['./*.json', '.jshintrc', '.jsbeautifyrc', 'tests/**/*.json'],
+      //testsPath: ['tests/*.js', 'tests/**/*.js', 'tests/**/**/*.js'],
+      //viewsPath: ['assets/views/*.jade', 'assets/views/**/*.jade', 'assets/views/**/**/*.jade'],
       tmpPath: '.tmp',
       buildPath: 'build',
     },
 
-    jade: require('./grunt/jade'),
-    autoprefixer: require('./grunt/autoprefixer'),
-    csslint: require('./grunt/csslint'),
-    csso: require('./grunt/csso'),
-    styl: require('./grunt/styl'),
-    connect: require('./grunt/connect'),
-    karma: require('./grunt/karma'),
-    mochaTest: require('./grunt/mocha-test'),
-    protractor: require('./grunt/protractor'),
-    clean: require('./grunt/clean'),
+    
     concat: require('./grunt/concat'),
     concurrent: require('./grunt/concurrent'),
     copy: require('./grunt/copy'),
-    jsbeautifier: require('./grunt/jsbeautifier'),
     jshint: require('./grunt/jshint'),
-    jsonlint: require('./grunt/jsonlint'),
-    open: require('./grunt/open'),
     uglify: require('./grunt/uglify'),
-    watch: require('./grunt/watch'),
+    //watch: require('./grunt/watch'),
+
+    sass: {
+      dev: {
+        src: ['assets/styles/scss/main.scss'],
+        dest: 'assets/styles/css/main.css',
+      },
+    },
+    watch: {
+      sass: {
+        // We watch and compile sass files as normal but don't live reload here
+        files: ['assets/styles/scss/main.scss'],
+        tasks: ['sass'],
+      }
+      // livereload: {
+      //   // Here we watch the files the sass task will compile to
+      //   // These files are sent to the live reload server after sass compiles to them
+      //   options: { livereload: true },
+      //   files: ['assets/styles/css/**/*'],
+      // },
+    },
+
   });
+
+
 
   // Load all grunt tasks
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
+  
+  //Compile sass
+  grunt.registerTask('default', ['sass']);
 
   // Lint all files
   grunt.registerTask('lint', [
@@ -105,4 +119,7 @@ module.exports = function (grunt) {
     'test',
     'server',
   ]);
+
+  grunt.registerTask('default', 'Monitor JS and SCSS files for changes', 
+    ['watch']);
 };
