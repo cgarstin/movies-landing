@@ -8,6 +8,9 @@ main {
     background-color: $white-f8;
     padding: 20px;
   }
+  .grid + .grid {
+    padding-top: 0;
+  }
 }
 
 %more-link {
@@ -22,6 +25,8 @@ main {
     content: "> ";
     color: $yellow;
     font-weight: normal;
+    position: relative;
+    top: -3px;
   }
 }
 
@@ -29,6 +34,7 @@ main {
   h3 {
     @extend %section-header;
     font-size: 26px;
+    margin-top: 1px;
   }
   .grid {
     section {
