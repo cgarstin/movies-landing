@@ -1,2 +1,3 @@
-npm install
-grunt watch
+`npm install`
+
+`grunt watch`
