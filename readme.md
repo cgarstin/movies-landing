@@ -1,2 +1,2 @@
-npm install -g yo
-npm install -g generator-grunt
+npm install
+grunt watch
