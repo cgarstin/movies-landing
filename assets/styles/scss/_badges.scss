@@ -1,0 +1,46 @@
+@mixin badge($color: $blue, $size: 9px) {
+  border: 1px solid $color;
+  font-size: $size;
+  padding: 0.1em 0.3em;
+  text-transform: uppercase;
+  color: $white;
+  @include linear-gradient(lighten($color, 25%) 5%, $color);
+  letter-spacing: 0.1em;
+  margin-right: 0.3em;
+}
+
+.lbl {
+  &-hot {
+    &:before {
+      @include badge($yellow);
+      content: "hot!";
+    }
+  }
+
+  &-new {
+    &:before {
+      @include badge;
+      content: "new!";
+    }
+  }
+}
+
+.star-rating {
+  font-size: 14px;
+  letter-spacing: 2px;
+  height: 1em;
+  &:before, &:after {
+    content: "\2605\2605\2605\2605\2605";
+    position: absolute;
+    color: $gray-cc;
+  }
+  @for $i from 0 through 5 {
+    &.rated-#{$i} {
+      &:after {
+        color: $yellow;
+        width: calc(1em * #{$i} + (2px * #{$i}));
+        overflow: hidden;
+      }
+    }
+  }
+}

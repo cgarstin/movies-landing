@@ -1,0 +1,75 @@
+body {
+  background: $gray-1a url(#{$imgdir}/base/linen-bg.jpg);
+  border-top: 40px solid $gray-1a;
+}
+
+main {
+  & > .grid {
+    background-color: $white-f8;
+    padding: 20px;
+  }
+}
+
+%more-link {
+  &:after {
+    color: $yellow;
+    content:" >";
+  }
+}
+
+%section-header {
+  &:before {
+    content: "> ";
+    color: $yellow;
+    font-weight: normal;
+  }
+}
+
+main {
+  h3 {
+    @extend %section-header;
+    font-size: 26px;
+  }
+  .grid {
+    section {
+      article {
+        font-size: 12px;
+        border-bottom: 1px solid $white-e4;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        @include clearfix;
+        img.thumbnail {
+          float: left;
+          margin-right: 10px;
+          ~ h4, ~ p {
+            display: inline-block;
+            width: calc(100% - 90px);
+            vertical-align: top;
+            line-height: 1.4em;
+            float: right;
+          }
+        }
+        h4 {
+          margin: 0;
+          & ~ p {
+            margin: 5px 0 0;
+          }
+        }
+      }
+      a.more {
+        @extend %more-link;
+        font-size: 14px;
+        width: 100%;
+        text-align: right;
+        display: block;
+        padding-right: 10px;
+        color: $gray-33;
+      }
+    }
+  }
+  @include media($mobile) {
+    & > .grid:first-child {
+      padding: 0;
+    }
+  }
+}

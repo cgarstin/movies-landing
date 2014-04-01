@@ -1,12 +1,21 @@
+
+$imgdir: "../../images/";
+
 @import "normalize.scss";
 
 @import "bourbon/bourbon";
+@import "grid-settings";
 @import "neat/neat";
 
 @import "colours";
 
 @import "grid";
+@import "base";
 
 @import "header";
-
 @import "hero-banner";
+
+@import "nav";
+
+@import "buttons";
+@import "badges";

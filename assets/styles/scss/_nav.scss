@@ -1,0 +1,60 @@
+%nav-links {
+  background: url(#{$imgdir}/base/nav-bg.gif);
+  list-style: none;
+  ul {
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    //to remove character whitespace between inline-block elements
+    font-size: 0;
+  }
+  li {
+    display: inline-block;
+    a {
+      display: inherit;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+nav[role="navigation"] {
+  @extend %nav-links;
+  ul {
+    position: relative;
+    z-index: 1000;
+    white-space: nowrap;
+  }
+  li {
+    a {
+      padding: 15px 0px 10px;
+      margin: 0 20px;
+      font-size: 18px;
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.75);
+      border-bottom: 5px solid rgba($yellow, 0);
+      @include transition( all 0.2s );
+      &:hover {
+        border-bottom: 5px solid rgba($yellow,1);
+      }
+    }
+  }
+  @include media($mobile) {
+    li {
+      a {
+        padding: 10px 0 5px;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+footer {
+  @extend %nav-links;
+  padding: 0 12px;
+  li {
+    a {
+      padding: 14px 8px;
+      font-size: 14px;
+    }
+  }
+}

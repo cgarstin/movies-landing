@@ -7,7 +7,7 @@
 
 
 $min-container-width: 320px;
-$max-container-width: 1200px;
+$max-container-width: 980px;
 
 // $phone-total-columns: 4;
 // $phone-column-width: 64px;
@@ -21,18 +21,25 @@ $max-container-width: 1200px;
 
 // $desktop-breakpoint-min: 1100px;
 // $desktop-total-columns: 12;
+$mini: max-width 660px 4;
+$mobile: max-width 767px 4;
+$tablet: min-width 768px max-width 979px 6;
 
-$mobile: new-breakpoint(max-width 767px 4);
-$tablet: new-breakpoint(min-width 768px max-width 1099px 6);
-
-$desktop: new-breakpoint(min-width 1100px 12);
+$desktop: min-width 980px 12;
 
 //---------- STYLES ---------
 
 
 
 body {
+}
+
+header,
+main,
+footer {
+
   @include outer-container;
+
 }
 
 .grid {
@@ -55,5 +62,23 @@ body {
     @include span-columns(12);
     @include omega;
   }
+}
 
+main {
+  section {
+    @include media($mobile) {
+      @include span-columns(4 of 4);
+      @include omega;
+    }
+
+    @include media($tablet) {
+      @include span-columns(4 of 12);
+      //@include omega(2n);
+    }
+
+    @include media($desktop) {
+      @include span-columns(2 of 6);
+      //@include omega();
+    }
+  }
 }
