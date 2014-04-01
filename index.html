@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hey! Let's Go Watch Movies</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -9,39 +10,45 @@
   </head>
   <body>
 
-    <div class="grid">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1>
+          <a href="">
+            <img src="assets/images/logo/logo.png" alt="Hey! Let's Go Watch Movies" />
+          </a>
+        </h1>
+      </div>
 
-      <!-- Header -->
-      <header>
-        <div class="logo">
-          <h1>
-            <a href="">
-              <img src="assets/images/logo/logo.png" alt="Hey! Let's Go Watch Movies" />
-            </a>
-          </h1>
+      <form action="" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" value="" placeholder="Search for films" />
+          <button type="submit">Search</button>
         </div>
+      </form>
+      
+      <!-- Nav -->
+      <nav role="navigation">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Film news</a></li>
+          <li><a href="">Film reviews</a></li>
+        </ul>
+        <ul>
+          <li><a href="">Trailers</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
 
-        <form action="" method="get" role="search">
-          <div class="search-wrap">
-            <label for="main-q" class="offscreen">Search</label>
-            <input type="search" id="main-q" name="q" value="" placeholder="Search for films">
-            <button type="submit" class="offscreen">Search</button>
-          </div>
-        </form>
+    </header>
         
-        <!-- Nav -->
-        <nav role="navigation">
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Film news</a></li>
-            <li><a href="">Film reviews</a></li>
-            <li><a href="">Trailers</a></li>
-            <li><a href="">About us</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-        </nav>
+      
 
-        <section class="hero">
+    <main class="main-content" role="main">
+      <div class="grid">
+        <div class="hero-banner">
           <article class="hero-content">
             <h2>Come Out Swinging</h2>
             <p>After an absence of four years, The Amazing Spider-Man is back in an upcoming American superhero film based on the comic book of the same name!</p>
@@ -49,77 +56,89 @@
               Read the full story
             </a>
           </article>
-          <img src="assets/images/hero/spiderman.png" alt="" aria-hidden="true" class="hero-image" />
-        </section>
+          <figure class="hero-image"></figure>
+        </div>
+      </div>
 
-      </header>
-        
-      
-      <main class="main-content" role="main">
+
+      <div class="grid">
         <section>
           <h3>Film news</h3>
           <article>
+            <img src="assets/images/thumbs/avatar.jpg" class="thumbnail" alt="" />
             <h4>James Cameron denies Sigourney Weaver's Avatar 2 role</h4>
-            <p class="lbl-hot">“I don’t want to disabuse her of that fantasy...”</p>
+            <p class="lbl-hot">"I don’t want to disabuse her of that fantasy..."</p>
           </article>
           <article>
+            <img src="assets/images/thumbs/muppets.jpg" class="thumbnail" alt="" />
             <h4>Joanna Newsom appears on Muppets soundtrack</h4>
-            <p class="lbl-new">Plus full track-listing for album released today. We caught up with Joanna earlier this week. She had this to say: “consectetur adipiscing elit. Suspendisse feugiat urna et magna”...</p>
+            <p class="lbl-new">Plus full track-listing for album released today. We caught up with Joanna earlier this week. She had this to say: "consectetur adipiscing elit. Suspendisse feugiat urna et magna"...</p>
           </article>
           <article>
+            <img src="assets/images/thumbs/django-unchained.jpg" class="thumbnail" alt="" />
             <h4>Don Johnson signs for Django Unchained</h4>
             <p class="lbl-new">Plays plantation-owning slave prostitute pimp...</p>
           </article>
-          <a href="">More film news</a>
+          <a href="" class="more">More film news</a>
         </section>
         <section>
           <h3>Film reviews</h3>
           <article>
+            <img src="assets/images/thumbs/lion-king.jpg" class="thumbnail" alt="" />
             <h4>The Lion King (In 3D)</h4>
             <p>The Lion King returns to our screens this year in 3D, tristique at diam. Aliquam eleifend euismod lobortis...</p>
+            <p class="star-rating rated-4"></p>
           </article>
           <article>
+            <img src="assets/images/thumbs/three-musketeers.jpg" class="thumbnail" alt="" />
             <h4>The Three Musketeers</h4>
             <p>The Three Musketeers senectus et netus et malesuada fames...</p>
+            <p class="star-rating rated-2"></p>
           </article>
           <article>
+            <img src="assets/images/thumbs/tinker-tailor-soldier-spy.jpg" class="thumbnail" alt="" />
             <h4>Tinker, Tailor, Soldier, Spy</h4>
             <p>Tinker, Tailor, Soldier Spy pharetra tempus volutpat. Praesent et magna enim. Sed vestibulum pharetra dui eget porttitor...</p>
+            <p class="star-rating rated-5"></p>
           </article>
-          <a href="">More film reviews</a>
+          <a href="" class="more">More film reviews</a>
         </section>
         <section>
           <h3>Film trailers</h3>
           <article>
+            <img src="assets/images/thumbs/tinker-tailor-soldier-spy.jpg" class="thumbnail" alt="" />
             <h4>Tinker, Tailor, Soldier, Spy teaser trailer released</h4>
             <p>Vestibulum nisi arcu, ultricies ut rhoncus id, congue sed massa...</p>
           </article>
           <article>
+            <img src="assets/images/thumbs/tintin.jpg" class="thumbnail" alt="" />
             <h4>New Tintin Trailer</h4>
             <p>Nam venenatis magna nec odio consequat dignissim. In ac urna nisl, ac tristique urna. Pellentesque eget ligula purus...</p>
           </article>
           <article>
+            <img src="assets/images/thumbs/django-unchained.jpg" class="thumbnail" alt="" />
             <h4>New Django Unchained Trailer</h4>
             <p>Maecenas pharetra tempus volutpat. Praesent et magna enim. Sed vestibulum pharetra dui eget porttitor. Donec in cursus nunc. Donec volutpat volutpat rutrum...</p>
           </article>
-          <a href="">More film trailers</a>
+          <a href="" class="more">More film trailers</a>
         </section>
+
+      </div>
         
-      </main>
+    </main>
       
         
-      <!-- Footer -->
-      <footer role="footer">
-        <ul>
-          <li><a href="">Careers</a></li>
-          <li><a href="">Terms and conditions</a></li>
-          <li><a href="">Privacy policy</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Contact us</a></li>
-        </ul>
+    <!-- Footer -->
+    <footer role="footer">
+      <ul>
+        <li><a href="">Careers</a></li>
+        <li><a href="">Terms and conditions</a></li>
+        <li><a href="">Privacy policy</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="">Contact us</a></li>
+      </ul>
 
-      </footer>
-    </div>
+    </footer>
 
   </body>
 </html>
